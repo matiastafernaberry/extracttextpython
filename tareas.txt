@@ -1,0 +1,6 @@
+Tareas a realizar:
+
+	cambiar la url y poner el titulo del articulo como url
+	mejorar el diseño
+	revisar y mejorar el escrapeo
+	categorizar noticias creando stop words efectivos

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+	{% autoescape on %}
+	<div id="contenido-pro">
+	  {{data}}
+	</div>                                                                                                                                           
+	{% endautoescape %}
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<base href="https://www.elpais.com.uy" target="_blank">
+</head>
+<body>
+	
+	<script type="text/javascript">
+		try {
+			//console.clear();
+			console.log(" ---  inicio ajax  --- ");
+			$(document).on('click','a',function(e) {
+		  		e.preventDefault();
+		  		$("#contenido-pro").empty();
+			   	$("#contenido-pro").html("<img src='http://charruanews.appspot.com/img/load3.gif' style='display: block;margin-left: auto;margin-right: auto;width: 50%;'>");
+		    	//alert($(this).attr("href"));
+		    	try {
+		    		console.log(" ---  en el ajax  --- ");
+		    		var getUrl = window.location;
+					var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			    	$.ajax({
+				  		type: "POST",
+				  		url: baseUrl + "/",
+				  		data: ({ url: $(this).attr("href"), location: "saa" }),
+				  		error: function(xhr) {
+				  			$("#contenido-pro").empty();
+				  			$("#contenido-pro").html("Error occured: " + xhr.status + " " + xhr.statusText + " " + xhr)
+			      			//alert("Error occured: " + xhr.status + " " + xhr.statusText + " " + xhr);
+			      			console.log(" ---  error en el ajax  --- ");
+			      			console.log(xhr);
+			   			},
+			   			success:function(data) {
+					      	$("#contenido-pro").fadeIn("slow").html(data); 
+					      	document.body.scrollTop = document.documentElement.scrollTop = 0;
+					    }
+					});
+				} catch(error) {
+					console.log("---  error en el ajax2  --- ");
+		  			console.error(error);
+		  		}
+		  	});
+		  	console.log(" ---  fin ajax  --- ");
+		} catch(error) {
+			console.clear();
+			console.log(" ---  error ajax  --- ");
+			console.error(error);
+		}
+	</script>
+</body>
+</html>
+	

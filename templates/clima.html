@@ -1,0 +1,23 @@
+{% if clima %}
+<div class="unslider">
+	<ul>
+		{% for i in clima %}
+		<li>
+			<div class="clima ">
+				<div class="list">
+					<div class="col-md-4">
+						<img alt="" src="/img/iconos_clima/{{i.code}}.png">
+					</div>
+					<div  class="col-md-8">
+						<div>
+							{{i.day}}&nbsp;{{i.date}}</br>{{ i.image }}
+						</div>
+						<div>máximo:&nbsp;{{ i.high }}º&nbsp;|&nbsp;minimo:&nbsp;{{ i.low }}º</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>	
+{% endif %}

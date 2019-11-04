@@ -1,0 +1,156 @@
+{% extends "templates/base.html" %}
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <small>NoticiasEW del día {{dia}} - {{mes}} - {{year}}, Uruguay</small>
+                </h2>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Projects Row -->
+        <div class="ajax">
+        </div>
+        <div class="row">
+          {% if data %}
+          <div class="col-md-4">
+            <button class="toggle">TOGGLE</button>
+            <div class="vticker">
+              <ul>
+                {% autoescape on %}
+                {% for i in data %}
+                <li>
+                    <div class="row">
+                      <div class="col-md-12"> <!-- 1 -->   
+                        <div class="portfolio-item">
+                         {% include 'templates/portfolio-item.html' %}
+                         {% if i.image %}
+                            <div class="image">
+                              <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+                                {{i.image}}
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endautoescape %}
+              </ul>
+            </div><!-- /.vticker -->
+          </div><!-- /.col-md-4 -->
+          {% endif %}
+
+          {% if data2 %}
+          <div class="col-md-4">
+            <button class="toggle">TOGGLE</button>
+            <div class="vticker">
+              <ul>
+                {% autoescape on %}
+                {% for i in data2 %}
+                <li>
+                    <div class="row">
+                      <div class="col-md-12"> <!-- 1 -->   
+                        <div class="portfolio-item">
+                         {% include 'templates/portfolio-item.html' %}
+                         {% if i.image %}
+                            <div class="image">
+                              <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+                                {{i.image}}
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endautoescape %}
+              </ul>
+            </div><!-- /.vticker -->
+          </div><!-- /.col-md-4 -->
+          {% endif %}
+
+          {% if data3 %}
+          <div class="col-md-4">
+            <button class="toggle2">TOGGLE</button>
+            <div class="vticker2">
+              <ul>
+                {% autoescape on %}
+                {% for i in data3 %}
+                <li>
+                    <div class="row">
+                      <div class="col-md-12"> <!-- 1 -->   
+                        <div class="portfolio-item">
+                         {% include 'templates/portfolio-item.html' %}
+                         {% if i.image %}
+                            <div class="image">
+                              <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+                                {{i.image}}
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endautoescape %}
+              </ul>
+            </div><!-- /.vticker -->
+          </div><!-- /.col-md-4 -->
+          {% endif %}
+
+          {% if data4 %}
+          <div class="col-md-4">
+            <button class="toggle3">TOGGLE</button>
+            <div class="vticker3">
+              <ul>
+                {% autoescape on %}
+                {% for i in data4 %}
+                <li>
+                    <div class="row">
+                      <div class="col-md-12"> <!-- 1 -->   
+                        <div class="portfolio-item">
+                         {% include 'templates/portfolio-item.html' %}
+                         {% if i.image %}
+                            <div class="image">
+                              <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+                                {{i.image}}
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endautoescape %}
+              </ul>
+            </div><!-- /.vticker -->
+          </div><!-- /.col-md-4 -->
+          {% endif %}
+        </div><!-- /.row -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/qtip/jquery.qtip.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-easy-ticker-master/test/jquery.easing.min.js"></script>
+    <script src="js/jquery-easy-ticker-master/jquery.easy-ticker.js"></script>
+    <script src="js/charrua.js"></script>
+{% endblock %}

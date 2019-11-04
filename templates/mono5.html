@@ -1,0 +1,91 @@
+{% extends "templates/base.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+             mi_primer_anuncio 
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6991630584262290"
+                 data-ad-slot="5177112560"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>-->
+        </div>
+    </div>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="">
+                    
+                </h2>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Projects Row -->
+        <div class="ajax">
+        {{data2}}
+            {% if error %}
+            {{error}}
+          {% endif %}
+        </div>
+        <div class="row">
+        {% autoescape on %}
+          {{data2}}
+          {% if data %}
+          <div class="grid">
+            {% for i in data %}
+            <div id="dynamic-grid-new"> <!-- 1 -->
+                  <div class="hentry-left m-t-15"> 
+                    <div class="entry-summary">
+                      <div class="teaser-content">                        
+                        {% if i.image %}
+                          <div class="featured-image">
+                            <a data-toggle="modal" data-target="#{{loop.index}}">
+                              {{i.image}}
+                            </a>
+                          </div>
+                        {% endif %}
+                        <h2 class="entry-title">
+                          <a href="{{ i.key.id() }}" class="content-title-single social_headline" rel="bookmark">
+                              <span class="content-title" itemprop="name">{{i.title}}</span>
+                          </a>
+                        </h2>
+                        <div class="texto-noticia" >
+                          {{ i.html }}
+                        </div>
+                      </div> 
+                    </div> <!--end portfolio-->
+                  </div>
+                  <br><br>
+                  <p style="float: right;">fuente: <a href="{{ i.url }}">{{ i.url }}</a></p>
+            </div> <!--end grid-->
+            {% endfor %}
+          {% endif %}
+          {% endautoescape %}
+          </div>
+          
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+             
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    {% include "templates/comentarios-articulo.html" %}
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  
+    
+   
+    
+{% endblock %}
+

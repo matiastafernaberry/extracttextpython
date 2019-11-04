@@ -1,0 +1,51 @@
+cron:
+- description: every day cron scrap el_pais
+  url: /cron/el_pais
+  schedule: every 2 hours from 07:00 to 23:00
+  timezone: America/Montevideo
+  target: beta
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
+
+
+- description: every day cron scrap la_diaria
+  url: /cron/la_diaria
+  schedule: every 2 hours from 07:10 to 23:10
+  timezone: America/Montevideo
+  target: beta
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
+
+
+- description: every day cron scrap lr21
+  url: /cron/lr21
+  schedule: every 2 hours from 07:20 to 23:20
+  timezone: America/Montevideo
+  target: beta
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
+
+
+- description: every day cron scrap montevideo_com
+  url: /cron/montevideo_com
+  schedule: every 2 hours from 07:30 to 23:30
+  timezone: America/Montevideo
+  target: beta
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
+
+
+- description: every day cron scrap ciento_ochenta
+  url: /cron/ciento_ochenta
+  schedule: every 2 hours from 07:40 to 23:40
+  timezone: America/Montevideo
+  target: beta
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
+
+

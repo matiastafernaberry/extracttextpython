@@ -1,0 +1,31 @@
+{% autoescape on %}
+    {% if data %}
+        <div class="container-fluid">
+            {% for i in data %}
+            {% if loop.index0 is divisibleby 2 %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{i.news_from}}<br>
+                        {{i.image}}
+                    
+                        <p>{{i.category}}</p>
+                        <h3><a href="{{i.url}}">{{i.title}}</a></h3>
+                        <p>{{i.subtitle}}</p>
+                    </div>
+            {% else %}
+                    <div class="col-sm-5">
+                        {{i.news_from}}<br>
+                        {{i.image}}
+                    
+                        <p>{{i.category}}</p>
+                        <h3><a href="{{i.url}}">{{i.title}}</a></h3>
+                        <p>{{i.subtitle}}</p>
+                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endautoescape %}
+{{error}}
+

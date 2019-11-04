@@ -1,0 +1,43 @@
+{% extends "templates/base.html" %}
+{% block body %}
+  <!-- Page Content -->
+  <div class="container-fluid">
+  {% autoescape on %}
+      {% if data %}
+        <div class="row " id="example1">
+          {% for i in data %}
+            <div class="col col-sm-4 aniview slow box" data-av-animation="slideInLeft"> <!-- 1 -->
+                  <div class="img-responsive">
+                    {% if i.image %}
+                        <a href="{{ i.key.id() }}">{{ i.image }}</a>
+                    {% endif %}
+                  </div>
+                  <div class="news-from">
+                    {{i.news_from}}
+                  </div>
+                  <div class="title-title">
+                    <h3 class="title">
+                      <a href="{{ i.key.id() }}" class="content-title-single social_headline" rel="bookmark">
+                        <span class="content-title ">{{i.title}}</span>
+                      </a>
+                    </h3>
+                    <div id="">
+                      <div id="">
+                        <a href="{{ i.url }}" class="text-excerpt" title="">{{i.subtitle}}</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            {% if loop.index % 3 == 0 %}
+              </div>
+              <div class="row">
+            {% endif %}        
+          {% endfor %}
+        </div>
+      {% endif %}
+  {% endautoescape %}
+  </div>  
+  <!-- /.container -->
+  <!-- Bootstrap Core JavaScript -->
+  
+{% endblock %}

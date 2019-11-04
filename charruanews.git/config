@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://gonzalo_tafernaberry@bitbucket.org/gonzalo_tafernaberry/charruanews.git
+	fetch = +refs/*:refs/*
+	mirror = true

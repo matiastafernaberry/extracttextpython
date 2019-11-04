@@ -1,0 +1,47 @@
+{% extends "templates/base.html" %}
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    <small>Noticias del día {{dia}} / {{mes}} / {{year}}, Uruguay</small>
+                </h2>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Projects Row -->
+        <div class="ajax">
+        </div>
+        <div class="row">
+        {% autoescape on %}
+              {% if data %}
+                {% for i in data %}
+            <div class="col-md-4"> <!-- 1 -->
+              
+                  <div class="portfolio-item">
+                     {% include 'templates/portfolio-item.html' %}
+                     {% if i.image %}
+                        <div class="image">
+                          <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+                            {{i.image}}
+                          </a>
+                        </div>
+                      {% endif %}
+                  </div>
+               
+              
+            </div>
+            {% endfor %}
+              {% endif %}
+              {% endautoescape %}
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/qtip/jquery.qtip.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/charrua.js"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+<div class="item">
+  <div class="ribbon">
+    <div class="category">{{i.category}}</div>
+  </div>
+  <div>{{ i.news_from|replace("_", " ")|capitalize }}</div>
+  <div class="title" title="{{i.html}}">
+    <h2><a href="{{i.url}}" rel="nofollow">{{i.title}}</a></h2>
+  </div>
+  {% if i.subtitle %}
+    <div class="subtitle">
+      <a href="{{i.url}}" rel="nofollow">{{i.subtitle|truncate(540, True)}}</a>
+    </div>
+  {% endif %}
+  {% if i.image %}
+    <div class="image" class="img-rounded">
+      <a href="{{i.url}}" title="{{i.subtitle}}" rel="nofollow">
+        {{i.image}}
+      </a>
+    </div>
+  {% endif %}
+</div>

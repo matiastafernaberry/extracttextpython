@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lazy Line Painter</title>
+        <meta name="description" content="A Jquery plugin for SVG path animation">
+
+        <meta property="og:image" content="http://lazylinepainter.info/img/upload-svg.png" />
+
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css" media = "all"/>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/fineuploader-3.2.css">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-37813630-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <section class='intro'>
+        	<div class='center-col'>
+               <a href="http://lazylinepainter.info/" title="home" >
+                <header>
+                    <h1 class='mask'>LAZY LINE PAINTER</h1>
+                </header>
+                </a>
+
+                <div class='showcase'>
+                    <div class="reload-wrap btn tooltip"  title="Next!">
+                        <div class="reload rotate" ></div>
+                    </div>
+                </div>
+
+                <h2 class='mask sub-title'>A JQUERY PLUGIN FOR SVG PATH ANIMATION</h2 >
+                <div class='download'>
+                    <a href="https://github.com/camoconnell/lazy-line-painter"><h2 class='mask'> DOWNLOAD FROM GITHUB </h2></a>
+                </div>
+                <div class="get-social">
+                    <div id="social-media-icons">
+                       <div class="star-button">
+                        	<iframe src="http://ghbtns.com/github-btn.html?user=camoconnell&repo=lazy-line-painter&type=watch&count=true"
+      allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+                        </div>
+
+
+                        <div class="facebook-button">
+                            <a href="http://lazylinepainter.info" class="socialite facebook-like" data-href="http://lazylinepainter.info" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
+                        </div>
+
+                        <div class="twitter-button">
+                            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Lazy Line Painter" data-url="http://lazylinepainter.info" data-count="horizontal" data-via='camoconnell' rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                        </div>
+
+                        <div class="gplus-button">
+                            <a href="https://plus.google.com/share?url=http://lazylinepainter.info" class="socialite googleplus-one" data-size="medium" data-href="http://lazylinepainter.info" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
+                        </div>
+                    </div>
+
+                    <div class="follow">
+                        <div class="twitter-follow-button">
+                            <a class="twitter-timeline" href="https://twitter.com/camoconnell" data-widget-id="306041401110564864">Tweets by @camoconnell</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </section>
+
+        <section class='how-to'>
+
+            <header>
+                <h1 class='mask'>HOW IT WORKS</h1>
+            </header>
+
+            <div class="steps">
+                <div class="inner">
+
+                    <div class="step-one fixedWidth">
+                        <p >
+                            Export your line art from Illustrator as an .SVG <br/>
+                            <span>Ensure there are no fills,<br/>
+                            No closed paths - Line needs a start and end, <br/>
+                            Crop Artboard nice & tight!</span>
+                        </p>
+                    </div>
+
+                    <div class="step-two">
+                        <div id="CenterLeft" class="centerColumn">
+                            <div class="padded">
+                                <div class="content">
+                                     <div class="file"> <p>.SVG</p></div>
+                                </div>
+                                <div class="fixedWidth">
+                                	<p>
+                                     	Drop your .SVG file <br />
+                                     	into the <br />
+                                        'SVG to Lazy Converter'.<br />
+                                     	& Copy the .JS code. <br/>
+                            			<span>Each paths duration can be tweaked in the code!<br/>
+                            			</span>
+                                    </p>
+                                </div>
+                                 <div class="clearSpacer">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div id="CenterRight" class="centerColumn">
+                            <div class="padded">
+                                <div class="content">
+                                	<div class="file"> <p>.JS</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearSpacer">&nbsp;</div>
+                    </div>
+
+                    <div class="step-three fixedWidth">
+                    	<p>
+                       		Import <a href="http://jquery.com/"  target="_blank" title="jQuery is a fast, small, and feature-rich JavaScript library" class='tooltip' >jQuery</a> & Lazylinepainter.
+							Paste Lazyline code with'in DOM ready function & publish <span>- Boom!</span>
+						</p>
+                    </div>
+                    <div class="clearSpacer">&nbsp;</div>
+                </div>
+            </div>
+
+
+
+
+
+        </section>
+
+        <section class='converter'>
+        	<div class="skirting"></div>
+            <div class="content">
+                <div class='center-col '>
+                    <header>
+                        <h1 class='mask'>SVG TO LAZY LINE CONVERTER</h1>
+                    </header>
+
+                    <div class='restricted-fine-uploader-wrap'>
+
+                        <div class="drop"></div>
+
+                        <div class="frame">
+                        	<!-- Lazy Line Art work added to this element -->
+                        </div>
+
+                        <div id='restricted-fine-uploader'></div>
+                    </div>
+
+
+                    <div class='edit-panel-wrap group'>
+
+                         <div class="reload-wrap btn tooltip" title="Repaint">
+                            <div class="reload rotate"></div>
+                        </div>
+
+                        <div class="edit-panel group">
+
+                            <div id="red"></div>
+                            <div id="green"></div>
+                            <div id="blue"></div>
+
+                            <div id="strokeWidth"></div>
+                        </div>
+
+                        <textarea id='svg-output'></textarea>
+                        <div id='copy-to-clip-wrap' data-clipboard-target="svg-output">
+                        	<div id='copy-to-clip' >Copy data to clipboard</div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        	</div>
+        </section>
+
+        <section class="contact">
+        	<div class='skirting'></div>
+        	 <div class='center-col '>
+
+                    <div class='donate'>
+
+                    <div class='content'>
+                        <div class="speech">
+                        	<div class="coin"></div>
+                            <div class="beer"></div>
+                        </div>
+                        <p class="panhandle">
+                        	If you found this plugin useful consider a donation, Thanks!
+                        </p>
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="donate-btn">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                    </div>
+             	</div>
+
+                <p class="details">&copy; 2013 <a href="http://www.behance.net/camoconnell" title="Click" target="_blank" class="tooltip">Behance.net/Cam O'Connell</a> Interactive design & development</p>
+
+             </div>
+        </section>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="js/plugins.js"></script>
+
+        <script type="text/javascript" src="js/jquery.lazylinepainter-1.5.1.js"></script>
+
+		<script type="text/javascript" src="js/lazy-line-data.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+    </body>
+</html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lazy Line Painter</title>
+        <meta name="description" content="A Jquery plugin for SVG path animation">
+
+        <meta property="og:image" content="http://lazylinepainter.info/img/upload-svg.png" />
+
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css" media = "all"/>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/fineuploader-3.2.css">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-37813630-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <section class='intro'>
+        	<div class='center-col'>
+               <a href="http://lazylinepainter.info/" title="home" >
+                <header>
+                    <h1 class='mask'>LAZY LINE PAINTER</h1>
+                </header>
+                </a>
+
+                <div class='showcase'>
+                    <div class="reload-wrap btn tooltip"  title="Next!">
+                        <div class="reload rotate" ></div>
+                    </div>
+                </div>
+
+                <h2 class='mask sub-title'>A JQUERY PLUGIN FOR SVG PATH ANIMATION</h2 >
+                <div class='download'>
+                    <a href="https://github.com/camoconnell/lazy-line-painter"><h2 class='mask'> DOWNLOAD FROM GITHUB </h2></a>
+                </div>
+                <div class="get-social">
+                    <div id="social-media-icons">
+                       <div class="star-button">
+                        	<iframe src="http://ghbtns.com/github-btn.html?user=camoconnell&repo=lazy-line-painter&type=watch&count=true"
+      allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+                        </div>
+
+
+                        <div class="facebook-button">
+                            <a href="http://lazylinepainter.info" class="socialite facebook-like" data-href="http://lazylinepainter.info" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
+                        </div>
+
+                        <div class="twitter-button">
+                            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Lazy Line Painter" data-url="http://lazylinepainter.info" data-count="horizontal" data-via='camoconnell' rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                        </div>
+
+                        <div class="gplus-button">
+                            <a href="https://plus.google.com/share?url=http://lazylinepainter.info" class="socialite googleplus-one" data-size="medium" data-href="http://lazylinepainter.info" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
+                        </div>
+                    </div>
+
+                    <div class="follow">
+                        <div class="twitter-follow-button">
+                            <a class="twitter-timeline" href="https://twitter.com/camoconnell" data-widget-id="306041401110564864">Tweets by @camoconnell</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </section>
+
+        <section class='how-to'>
+
+            <header>
+                <h1 class='mask'>HOW IT WORKS</h1>
+            </header>
+
+            <div class="steps">
+                <div class="inner">
+
+                    <div class="step-one fixedWidth">
+                        <p >
+                            Export your line art from Illustrator as an .SVG <br/>
+                            <span>Ensure there are no fills,<br/>
+                            No closed paths - Line needs a start and end, <br/>
+                            Crop Artboard nice & tight!</span>
+                        </p>
+                    </div>
+
+                    <div class="step-two">
+                        <div id="CenterLeft" class="centerColumn">
+                            <div class="padded">
+                                <div class="content">
+                                     <div class="file"> <p>.SVG</p></div>
+                                </div>
+                                <div class="fixedWidth">
+                                	<p>
+                                     	Drop your .SVG file <br />
+                                     	into the <br />
+                                        'SVG to Lazy Converter'.<br />
+                                     	& Copy the .JS code. <br/>
+                            			<span>Each paths duration can be tweaked in the code!<br/>
+                            			</span>
+                                    </p>
+                                </div>
+                                 <div class="clearSpacer">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div id="CenterRight" class="centerColumn">
+                            <div class="padded">
+                                <div class="content">
+                                	<div class="file"> <p>.JS</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearSpacer">&nbsp;</div>
+                    </div>
+
+                    <div class="step-three fixedWidth">
+                    	<p>
+                       		Import <a href="http://jquery.com/"  target="_blank" title="jQuery is a fast, small, and feature-rich JavaScript library" class='tooltip' >jQuery</a> & Lazylinepainter.
+							Paste Lazyline code with'in DOM ready function & publish <span>- Boom!</span>
+						</p>
+                    </div>
+                    <div class="clearSpacer">&nbsp;</div>
+                </div>
+            </div>
+
+
+
+
+
+        </section>
+
+        <section class='converter'>
+        	<div class="skirting"></div>
+            <div class="content">
+                <div class='center-col '>
+                    <header>
+                        <h1 class='mask'>SVG TO LAZY LINE CONVERTER</h1>
+                    </header>
+
+                    <div class='restricted-fine-uploader-wrap'>
+
+                        <div class="drop"></div>
+
+                        <div class="frame">
+                        	<!-- Lazy Line Art work added to this element -->
+                        </div>
+
+                        <div id='restricted-fine-uploader'></div>
+                    </div>
+
+
+                    <div class='edit-panel-wrap group'>
+
+                         <div class="reload-wrap btn tooltip" title="Repaint">
+                            <div class="reload rotate"></div>
+                        </div>
+
+                        <div class="edit-panel group">
+
+                            <div id="red"></div>
+                            <div id="green"></div>
+                            <div id="blue"></div>
+
+                            <div id="strokeWidth"></div>
+                        </div>
+
+                        <textarea id='svg-output'></textarea>
+                        <div id='copy-to-clip-wrap' data-clipboard-target="svg-output">
+                        	<div id='copy-to-clip' >Copy data to clipboard</div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        	</div>
+        </section>
+
+        <section class="contact">
+        	<div class='skirting'></div>
+        	 <div class='center-col '>
+
+                    <div class='donate'>
+
+                    <div class='content'>
+                        <div class="speech">
+                        	<div class="coin"></div>
+                            <div class="beer"></div>
+                        </div>
+                        <p class="panhandle">
+                        	If you found this plugin useful consider a donation, Thanks!
+                        </p>
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="donate-btn">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                    </div>
+             	</div>
+
+                <p class="details">&copy; 2013 <a href="http://www.behance.net/camoconnell" title="Click" target="_blank" class="tooltip">Behance.net/Cam O'Connell</a> Interactive design & development</p>
+
+             </div>
+        </section>
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="js/plugins.js"></script>
+
+        <script type="text/javascript" src="js/jquery.lazylinepainter-1.5.1.js"></script>
+
+		<script type="text/javascript" src="js/lazy-line-data.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+    </body>
+</html>

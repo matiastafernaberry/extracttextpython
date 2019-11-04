@@ -1,0 +1,85 @@
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+             mi_primer_anuncio 
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6991630584262290"
+                 data-ad-slot="5177112560"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>-->
+        </div>
+    </div>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="">
+                    
+                </h2>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Projects Row -->
+        <div class="ajax">
+        {{data2}}
+            {% if error %}
+            {{error}}
+          {% endif %}
+        </div>
+        <div class="row">
+        {% autoescape on %}
+          {{data2}}
+          {% if data %}
+          <div class="dynamic-grid-new">
+            {% for i in data %}
+            <article class="hentry"> <!-- 1 -->
+                  <div class="hentry-left">
+                    <div class="featured-image">
+                        {% if i.image %}
+                          <div class="img-responsive">
+                            <a href="{{ i.url }}">
+                              {{ i.image }}
+                            </a>
+                          </div>
+                        {% endif %}
+                    </div>
+                    <div class="ribbon">
+                      <div class="category">{{i.category}}</div>
+                      </div>
+                      <div class="fuente">Fuente:&nbsp;{{ i.news_from|replace("_", " ")|capitalize }}</div>
+                      <div class="title" title="">
+                        <h2>
+                          <a href="{{ i.key.id() }}">{{i.title}}</a>
+                        </h2>
+                      </div>
+                    </div> <!--end portfolio-->
+                  </div>
+            </article> <!--end grid-->
+            {% endfor %}
+          {% endif %}
+          {% endautoescape %}
+          </div>
+          <div id="load"></div>
+          <div id="load2"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+             
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/charrua.js"></script>
+{% endblock %}
