@@ -30,7 +30,7 @@ from views.classification.testclassifier import TestClassifier
 from views.delete_news.delete import *
 from views.cron.cron import *
 
-from views.htmltotext.htmltotext5 import HtmlToTextMain as HtmlToTextMain5
+from views.htmltotext.htmltotext3 import HtmlToTextMain as HtmlToTextMain3
 from views.htmltotext.htmltotext4 import HtmlToTextMain as HtmlToTextMain2
 
 from views.category.category import CategoryMain
@@ -136,7 +136,7 @@ class Comentarios(webapp2.RequestHandler):
         try:
             url = self.request.POST["url"]
             try:
-                c = HtmlToTextMain2()
+                c = HtmlToTextMain3()
                 page = url
                 texto = c.main(page)
             except ValueError:
