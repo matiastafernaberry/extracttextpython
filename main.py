@@ -122,7 +122,7 @@ class Comentarios(webapp2.RequestHandler):
                 'empty': "hello",
             }
 
-            template = JINJA_ENVIRONMENT.get_template('/templates/comentarios.html')
+            template = JINJA_ENVIRONMENT.get_template('/templates/main.html')
             self.response.write(template.render(template_values))
         except:
             error = traceback.format_exc()
@@ -150,7 +150,7 @@ class Comentarios(webapp2.RequestHandler):
             template_values = {
                 'comentarios': texto,
             }
-            template = JINJA_ENVIRONMENT.get_template('/templates/comentarios.html')
+            template = JINJA_ENVIRONMENT.get_template('/templates/main.html')
             self.response.write(template.render(template_values))
 
         except:
@@ -185,7 +185,7 @@ class ComentariosArticulo(webapp2.RequestHandler):
         try:
             url = self.request.POST["url"]
             try:
-                c = HtmlToTextMain()
+                c = HtmlToTextMain3()
                 page = url
                 texto = c.main(page)
             except:
@@ -286,7 +286,6 @@ config['webapp2_extras.sessions'] = {
 
 app = webapp2.WSGIApplication([
     webapp2.Route(r'/', Comentarios),
-    webapp2.Route(r'/api/', ComentariosArticulo),
     webapp2.Route(r'/api/', ComentariosArticulo)
 ], config=config, debug=False)
 
