@@ -147,11 +147,11 @@ class Comentarios(webapp2.RequestHandler):
             print "   "
             print url
             print "   "
-            template_values = {
-                'comentarios': texto,
-            }
-            template = JINJA_ENVIRONMENT.get_template('/templates/main.html')
-            self.response.write(template.render(template_values))
+            self.response.headers['Content-Type'] = 'application/json'   
+            obj = {
+              'data': texto, 
+            } 
+            self.response.out.write(json.dumps(obj))
 
         except:
             print traceback.format_exc()
